@@ -50,16 +50,11 @@ $(document).ready(function () {
             $.ajax({
                 url: "https://jsonplaceholder.typicode.com/posts",
                 type: "POST",
-                contentType: "application/json",
+                contentType: "application/json", 
                 data: JSON.stringify(formData),
                 success: function (response) {
-                    alert("data sent successfully.");
-                    // console.log(response);
-
-                    const displayData = JSON.stringify(response)
-                    const submittedData = $("#submitted-data")
-                    submittedData.text("submitted data : "+ displayData)
-
+                    const successMsg = $('#scuess-msg');
+                    successMsg.text('Form submitted successfully')
                 },
                 error: function () {
                     alert("Error sending data")
