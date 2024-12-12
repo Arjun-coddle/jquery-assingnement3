@@ -1,6 +1,0 @@
-projectKey=jquery-assignment3
-serverUrl=http://localhost:9000
-serverVersion=10.7.0.96327
-dashboardUrl=http://localhost:9000/dashboard?id=jquery-assignment3
-ceTaskId=ff574220-0904-484f-8849-f01b3b3e73a0
-ceTaskUrl=http://localhost:9000/api/ce/task?id=ff574220-0904-484f-8849-f01b3b3e73a0
