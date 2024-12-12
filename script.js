@@ -53,8 +53,13 @@ $(document).ready(function () {
                 contentType: "application/json", 
                 data: JSON.stringify(formData),
                 success: function (response) {
+
+                    const displayData = JSON.stringify(response)
+                    const submittedData = $("#submitted-data")
                     const successMsg = $('#scuess-msg');
                     successMsg.text('Form submitted successfully')
+                    submittedData.text("submitted data : "+ displayData)
+
                 },
                 error: function () {
                     alert("Error sending data")
