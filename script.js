@@ -41,24 +41,30 @@ $(document).ready(function () {
         }
         if (isValid) {
 
-            const formData = {
-                name: name,
-                email: email,
-                feedback: feedback
+            const data = {
+                name : name,
+                email : email,
+                feedback : feedback
             }
+
+            const formData = `
+            name: "${data.name}",
+            email: "${data.email}",
+            feedback: "${data.feedback}"
+            `
 
             $.ajax({
                 url: "https://jsonplaceholder.typicode.com/posts",
                 type: "POST",
-                contentType: "application/json", 
-                data: JSON.stringify(formData),
-                success: function (response) {
+                contentType: "application/json",
+                data: JSON.stringify(data),
+                success: function () {
 
-                    const displayData = JSON.stringify(response)
+                    // const displayData = JSON.stringify(response)
                     const submittedData = $("#submitted-data")
                     const successMsg = $('#scuess-msg');
                     successMsg.text('Form submitted successfully')
-                    submittedData.text("submitted data : "+ displayData)
+                    submittedData.text(formData)
 
                 },
                 error: function () {
